@@ -6,7 +6,11 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const port = 3000 || process.env.PORT ;
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 const UserRouter = require('./routes/User');
 const quoteRouter = require('./routes/Quotes');
