@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const port = process.env.port || 3000;
+const port = 3000 || process.env.PORT ;
 
 const UserRouter = require('./routes/User');
 const quoteRouter = require('./routes/Quotes');
